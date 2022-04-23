@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <Button
+        android:id="@+id/flavorBackBtn"
+        android:layout_width="147dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="13dp"
+        android:layout_marginTop="34dp"
+        android:layout_marginEnd="251dp"
+        android:layout_marginBottom="14dp"
+        android:text="Back"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/donutOrderListView" />
+
+    <TextView
+        android:id="@+id/flavorChoice"
+        android:layout_width="400dp"
+        android:layout_height="67dp"
+        android:layout_marginTop="28dp"
+        android:textAlignment="center"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.454"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/editTextTextPersonName7"
+        android:layout_width="199dp"
+        android:layout_height="54dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="37dp"
+        android:layout_marginEnd="207dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:minHeight="48dp"
+        android:text="Donut Type"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/flavorChoice" />
+
+    <RadioGroup
+
+        android:id="@+id/buttonGroup"
+        android:layout_width="404dp"
+        android:layout_height="157dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="2dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName7">
+
+        <RadioButton
+            android:id="@+id/yeastBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Yeast Donut" />
+
+        <RadioButton
+            android:id="@+id/cakeBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Cake Donut" />
+
+        <RadioButton
+            android:id="@+id/holeBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Donut Holes" />
+
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/createOrder"
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
+        android:layout_marginTop="67dp"
+        android:text="Button"
+        app:layout_constraintTop_toBottomOf="@+id/donutAmt"
+        tools:layout_editor_absoluteX="-16dp" />
+
+    <EditText
+        android:id="@+id/editTextTextPersonName5"
+        android:layout_width="199dp"
+        android:layout_height="54dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="207dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:minHeight="48dp"
+        android:text="Quantity"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonGroup" />
+
+    <EditText
+        android:id="@+id/donutAmt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:ems="10"
+        android:hint="Must be a valid number greater than 0"
+        android:inputType="number"
+        android:minHeight="48dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName5"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
