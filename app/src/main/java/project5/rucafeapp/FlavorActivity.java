@@ -7,6 +7,7 @@ import android.widget.Button;
 import android.widget.ListView;
 import android.widget.RadioButton;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -57,16 +58,10 @@ public class FlavorActivity extends AppCompatActivity {
         startActivity(intent);
     }
     public void confirmOrder() {
-        if(MainActivity.currentOrder.orderList == null){
-            System.out.println("Its Null");
-            return;
-        }else{
-            System.out.println("Its  NOT !!!!! !! Null");
-
-        }
         String type = getDonutType();
         String flavor = String.valueOf(this.flavorTxt.getText());
         if(checkDonutType() == -1 || flavor == null || checkAmount() == -1) {
+            System.out.println("Sometig up");
             return;
         }
         switch(type) {
@@ -82,11 +77,13 @@ public class FlavorActivity extends AppCompatActivity {
             default:
                 return;
         }
+
         openDonutScreen();
     }
     public void openDonutScreen() {
         Intent intent = new Intent(this, DonutsScreen.class);
         startActivity(intent);
+        Toast.makeText(getApplicationContext(), "Order Added Successfully", Toast.LENGTH_SHORT).show();
     }
     private String getDonutType(){
         if(this.yeastButton.isChecked())

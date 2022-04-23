@@ -73,7 +73,7 @@
             android:id="@+id/holeBtn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Donut Holes" />
+            android:text="Donut Hole" />
 
     </RadioGroup>
 
@@ -82,7 +82,7 @@
         android:layout_width="match_parent"
         android:layout_height="65dp"
         android:layout_marginTop="67dp"
-        android:text="Button"
+        android:text="Add to Order"
         app:layout_constraintTop_toBottomOf="@+id/donutAmt"
         tools:layout_editor_absoluteX="-16dp" />
 

@@ -49,9 +49,12 @@ public class ListAdapter extends BaseAdapter {
         TextView menuItem = convertView.findViewById(R.id.menuItemType);
         TextView menuDetails = convertView.findViewById(R.id.menuItemDetails);
         MenuItem orderItem = donutArrayList.get(position);
+        if(!(orderItem instanceof Donut)){
+            return convertView;
+        }
         menuItem.setText(orderItem.getType());
         menuDetails.setText("Order details: \n\tDonut Type: " + orderItem.getItemName() + "\n\tQuantity: " + orderItem.getAmount()
-                + "\n\tPrice: " + orderItem.getPrice());
+                + "\n\tPrice: $" + orderItem.itemPrice());
         return convertView;
     }
 }
