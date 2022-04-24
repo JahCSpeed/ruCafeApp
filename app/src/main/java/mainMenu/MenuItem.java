@@ -1,5 +1,7 @@
 package mainMenu;
 
+import java.text.DecimalFormat;
+
 /**
  The MenuItem class is an abstract class to work as a framework so other classes can hold details about the item's specific details.
  This class is the parent of both Donut and Coffee.
@@ -10,13 +12,14 @@ public abstract class MenuItem {
 	protected int amount;
 	protected String itemName;
 	protected String itemType;
-	
+	private final DecimalFormat format = new DecimalFormat("###,##0.00");
+
 	/**
 	 Returns the total price of the item.
 	 @return The total price of the item, which is seen by doing individual price * amount in $##.## amount.
 	 */
 	public double itemPrice() {
-		return price * amount;
+		return Double.parseDouble(format.format(price * amount));
 	}
 	
 	/**
@@ -74,6 +77,7 @@ public abstract class MenuItem {
 	 @return A string in "Item: (ITEMNAME) | Flavor: (ITEMTYPE) | Quantity: (AMOUNT)" format.
 	 */
 	public String toString() {
-		return "Item: " + this.itemName + "  | Flavor: " + this.itemType + "  | Quantity: " + this.amount;
+		return "\n\tItem: " + this.itemName + "\n\tFlavor: " + this.itemType + "\n\tQuantity: " + this.amount
+				+"\n\tPrice: $" + this.itemPrice();
 	}
 }

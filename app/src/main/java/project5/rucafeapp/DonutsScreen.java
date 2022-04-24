@@ -10,13 +10,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ListView;
-import android.widget.RadioButton;
-import android.widget.TextView;
 
 import java.util.ArrayList;
-
-import donut.Donut;
-import donut.DonutPrices;
 
 public class DonutsScreen extends AppCompatActivity {
     private ArrayList<Flavor> flavorList;
@@ -30,7 +25,7 @@ public class DonutsScreen extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_donuts);
         flavorView = findViewById(R.id.donutFlavorRecycle);
-        donutOrders = findViewById(R.id.donutOrderListView);
+        donutOrders = findViewById(R.id.allOrderListView);
         backBtn = findViewById(R.id.donutBackBtn);
         backBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -41,7 +36,7 @@ public class DonutsScreen extends AppCompatActivity {
         flavorList = new ArrayList<>();
         addFlavors();
         setFlavorList();
-        ListAdapter listAdapter = new ListAdapter(getApplicationContext(),MainActivity.currentOrder.orderList);
+        ListAdapter listAdapter = new ListAdapter(getApplicationContext(),MainActivity.currentOrder.orderList, 1);
         donutOrders.setAdapter(listAdapter);
         donutOrders.setClickable(true);
     }

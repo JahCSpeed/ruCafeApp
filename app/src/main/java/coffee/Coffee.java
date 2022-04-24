@@ -78,7 +78,7 @@ public class Coffee extends MenuItem implements Customizable {
 	 */
 	@Override
 	public String toString() {
-		String returnString = ("Size: " + this.itemName + "  | Flavor: " + this.itemType + "  | Addins: ");
+		String returnString = ("\n\tSize: " + this.itemName + "\n\tFlavor: " + this.itemType + "\n\tAddins: ");
 		if(addIns.size() == 0) {
 			returnString+= "NONE";
 		}else {
@@ -89,7 +89,7 @@ public class Coffee extends MenuItem implements Customizable {
 					returnString+= addIns.get(i);
 			}
 		}
-		returnString+= "  |Quantity: " + this.amount;
+		returnString+= "\n\tQuantity: " + this.amount + "\n\tPrice: $" + this.itemPrice();
 		return returnString;
 		
 	}

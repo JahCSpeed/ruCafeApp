@@ -13,12 +13,9 @@
         android:layout_height="57dp"
         android:layout_marginStart="9dp"
         android:layout_marginTop="34dp"
-        android:layout_marginEnd="201dp"
         android:text="Donut Type"
         android:textSize="24sp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView4" />
 
@@ -65,29 +62,25 @@
     </androidx.recyclerview.widget.RecyclerView>
 
     <ListView
-        android:id="@+id/donutOrderListView"
-        android:layout_width="412dp"
-        android:layout_height="340dp"
+        android:id="@+id/allOrderListView"
+        android:layout_width="407dp"
+        android:layout_height="280dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="2dp"
-        android:layout_marginBottom="2dp"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.555"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView3"
         tools:listitem="@layout/listview_item" />
 
     <Button
         android:id="@+id/donutBackBtn"
         android:layout_width="147dp"
         android:layout_height="50dp"
-        android:layout_marginStart="13dp"
-        android:layout_marginTop="34dp"
-        android:layout_marginEnd="251dp"
-        android:layout_marginBottom="14dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="20dp"
         android:text="Back"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/donutOrderListView" />
+        app:layout_constraintTop_toBottomOf="@+id/allOrderListView" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

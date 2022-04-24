@@ -21,6 +21,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.home_page);
         Button donutButton = findViewById(R.id.donutButton);
         Button coffeeButton = findViewById(R.id.coffeeButton);
+        Button cartButton = findViewById(R.id.ordersButton);
         donutButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -33,6 +34,12 @@ public class MainActivity extends AppCompatActivity {
                 openCoffeeScreen();
             }
         });
+        cartButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openCartScreen();
+            }
+        });
     }
     public void openDonutScreen() {
         Intent intent = new Intent(this, DonutsScreen.class);
@@ -41,6 +48,10 @@ public class MainActivity extends AppCompatActivity {
     }
     public void openCoffeeScreen() {
         Intent intent = new Intent(this, CoffeeScreen.class);
+        startActivity(intent);
+    }
+    public void openCartScreen() {
+        Intent intent = new Intent(this, OrderScreen.class);
         startActivity(intent);
     }
 

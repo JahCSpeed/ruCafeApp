@@ -16,8 +16,11 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
+import org.w3c.dom.Text;
+
 import java.util.ArrayList;
 
+import coffee.Coffee;
 import donut.Donut;
 import mainMenu.MenuItem;
 import orders.Order;
@@ -29,15 +32,36 @@ public class ListAdapter extends BaseAdapter {
     private final String optionRemove = "Remove";
     private final String optionEdit = "Edit";
     private final String keyForFlavor = "Flavors";
-    public ListAdapter(Context context, ArrayList<MenuItem> arrayList) {
+    private final int DONUTVIEW = 1, COFFEEVIEW = 2, ALLORDERS = 0;
+    private int orderType;
+    public ListAdapter(Context context, ArrayList<MenuItem> arrayList, int orderType) {
         this.context = context;
         this.donutArrayList = arrayList;
         this.inflater = LayoutInflater.from(context);
+        this.orderType = orderType;
     }
 
     @Override
     public int getCount() {
+        if(orderType == DONUTVIEW){
+            int counter = 0;
+            for(MenuItem item: donutArrayList){
+                if(item instanceof Donut){
+                    counter++;
+                }
+            }
+            return counter;
+        }else if(orderType == COFFEEVIEW){
+            int counter = 0;
+            for(MenuItem item: donutArrayList){
+                if(item instanceof Coffee){
+                    counter++;
+                }
+            }
+            return counter;
+        }
         return donutArrayList.size();
+
     }
 
     @Override
@@ -62,18 +86,31 @@ public class ListAdapter extends BaseAdapter {
             @Override
             public void onClick(View v) {
                 removeItem(orderItem);
+
             }
         });
-        if(!(orderItem instanceof Donut)){
+        if(orderType == DONUTVIEW){
+            if(orderItem instanceof Donut) {
+                menuItem.setText(orderItem.getType());
+                menuDetails.setText("Order Details:" + ((Donut) orderItem).toString());
+                return convertView;
+            }
+        }
+
+        if(orderType == COFFEEVIEW){
+            if(orderItem instanceof  Coffee) {
+                menuItem.setText(orderItem.getType());
+                menuDetails.setText("Order Details:" + ((Coffee) orderItem).toString());
+                return convertView;
+            }
+        }
+        if(orderType == ALLORDERS){
+            menuItem.setText(orderItem.getType());
+            menuDetails.setText("Order Details:" + orderItem.toString());
             return convertView;
         }
-        menuItem.setText(orderItem.getType());
-        menuDetails.setText("Order details: \n\tDonut Type: " + orderItem.getItemName() + "\n\tQuantity: " + orderItem.getAmount()
-                + "\n\tPrice: $" + orderItem.itemPrice());
         return convertView;
     }
-
-
     public void removeItem(MenuItem item) {
        if(MainActivity.currentOrder.remove(item)){
            Toast.makeText(context.getApplicationContext(), "Item Removed From Cart", Toast.LENGTH_LONG).show();

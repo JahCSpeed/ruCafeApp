@@ -1,9 +1,11 @@
 <resources>
     <string name="app_name">ruCafeApp</string>
 
-    <string-array name="orderOptions">
-        <item>Edit</item>
-        <item>Remove</item>
+    <string-array name="drinkSizes">
+        <item>Small</item>
+        <item>Tall</item>
+        <item>Grande</item>
+        <item>Venti</item>
     </string-array>
 
 

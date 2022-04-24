@@ -22,14 +22,12 @@
         android:layout_width="147dp"
         android:layout_height="50dp"
         android:layout_marginStart="13dp"
-        android:layout_marginTop="34dp"
         android:layout_marginEnd="251dp"
         android:layout_marginBottom="14dp"
         android:text="Back"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/donutOrderListView" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/flavorChoice"
@@ -94,6 +92,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
         android:ems="10"
+        android:imeOptions="actionDone"
         android:hint="Must be a valid number greater than 0"
         android:inputType="number"
         android:minHeight="48dp"
