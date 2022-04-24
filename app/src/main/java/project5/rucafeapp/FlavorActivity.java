@@ -1,5 +1,7 @@
 package project5.rucafeapp;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -60,7 +62,7 @@ public class FlavorActivity extends AppCompatActivity {
     public void confirmOrder() {
         String type = getDonutType();
         String flavor = String.valueOf(this.flavorTxt.getText());
-        if(checkDonutType() == -1 || flavor == null || checkAmount() == -1) {
+        if(type == null || flavor == null || checkAmount() == -1) {
             System.out.println("Sometig up");
             return;
         }
@@ -85,33 +87,41 @@ public class FlavorActivity extends AppCompatActivity {
         startActivity(intent);
         Toast.makeText(getApplicationContext(), "Order Added Successfully", Toast.LENGTH_SHORT).show();
     }
-    private String getDonutType(){
-        if(this.yeastButton.isChecked())
+    private String getDonutType() {
+        if (this.yeastButton.isChecked())
             return this.yeastButton.getText().toString();
-        if(this.cakeButton.isChecked())
+        if (this.cakeButton.isChecked())
             return this.cakeButton.getText().toString();
-        if(this.holeButton.isChecked())
+        if (this.holeButton.isChecked())
             return this.holeButton.getText().toString();
+        createAlertBox("Please select a donut type!","Hello Friend","Ok");
         return null;
 
     }
-    private int checkDonutType(){
-        if(!this.yeastButton.isChecked() && !this.cakeButton.isChecked() && !this.holeButton.isChecked()){
-            System.out.println("No Flavor Selected");
-            return -1;
-        }
-        return 0;
+    private void createAlertBox(String message,String title,String positiveMessageBtn){
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setMessage(message);
+        builder.setTitle(title);
+        builder.setCancelable(false);
+        builder.setPositiveButton(positiveMessageBtn, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which){
+                dialog.cancel();
+            }
+        });
+        AlertDialog alertDialog = builder.create();
+        alertDialog.show();
     }
     private int checkAmount(){
         try{
             this.amount = Integer.parseInt(donutAmount.getText().toString());
             if(this.amount <= 0){
-                System.out.println("No Amount Selected");
+                createAlertBox("Please enter a number greater then 0!","Hello Friend","Ok");
                 return -1;
             }
             return 0;
         }catch(Exception NumberFormatException){
-            System.out.println("Must input an valid amount");
+            createAlertBox("Please enter a valid number greater then 0!","Hello Friend","Ok");
             return -1;
         }
 

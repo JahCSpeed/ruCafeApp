@@ -6,17 +6,16 @@
     android:layout_height="match_parent"
     tools:context=".CoffeeScreen">
 
-    <EditText
-        android:id="@+id/editTextTextPersonName3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="96dp"
-        android:layout_marginTop="36dp"
-        android:layout_marginEnd="105dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:minHeight="48dp"
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="407dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="3dp"
+        android:layout_marginEnd="3dp"
         android:text="Order Coffee"
+        android:textAlignment="center"
+        android:textSize="48sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

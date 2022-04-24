@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">ruCafeApp</string>
+
+    <string-array name="orderOptions">
+        <item>Edit</item>
+        <item>Remove</item>
+    </string-array>
+
+
 </resources>
