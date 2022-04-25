@@ -11,7 +11,7 @@
         android:layout_height="57dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="13dp"
-        android:text="Quantity"
+        android:text="@string/quantity"
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
@@ -24,7 +24,7 @@
         android:layout_marginStart="13dp"
         android:layout_marginEnd="251dp"
         android:layout_marginBottom="14dp"
-        android:text="Back"
+        android:text="@string/backTxt"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
@@ -58,19 +58,19 @@
             android:id="@+id/yeastBtn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Yeast Donut" />
+            android:text="@string/yeast_donut" />
 
         <RadioButton
             android:id="@+id/cakeBtn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Cake Donut" />
+            android:text="@string/cake_donut" />
 
         <RadioButton
             android:id="@+id/holeBtn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Donut Hole" />
+            android:text="@string/donut_hole" />
 
     </RadioGroup>
 
@@ -81,7 +81,7 @@
         android:layout_marginStart="27dp"
         android:layout_marginTop="67dp"
         android:layout_marginEnd="29dp"
-        android:text="Add to Order"
+        android:text="@string/add_to_order"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/donutAmt" />
@@ -93,14 +93,15 @@
         android:layout_marginTop="15dp"
         android:ems="10"
         android:imeOptions="actionDone"
-        android:hint="Must be a valid number greater than 0"
+        android:hint="@string/hint"
         android:inputType="number"
         android:minHeight="48dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView2"
-        tools:ignore="SpeakableTextPresentCheck" />
+        tools:ignore="SpeakableTextPresentCheck"
+        android:autofillHints="" />
 
     <TextView
         android:id="@+id/textView"
@@ -109,7 +110,7 @@
         android:layout_marginStart="9dp"
         android:layout_marginTop="28dp"
         android:layout_marginEnd="201dp"
-        android:text="Donut Type"
+        android:text="@string/donut_type"
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"

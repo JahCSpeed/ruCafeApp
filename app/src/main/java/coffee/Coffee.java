@@ -89,7 +89,7 @@ public class Coffee extends MenuItem implements Customizable {
 					returnString+= addIns.get(i);
 			}
 		}
-		returnString+= "\n\tQuantity: " + this.amount + "\n\tPrice: $" + this.itemPrice();
+		returnString+= "\n\tQuantity: " + this.amount + "\n\tPrice: $" + format.format(this.itemPrice());
 		return returnString;
 		
 	}

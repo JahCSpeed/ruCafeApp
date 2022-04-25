@@ -12,14 +12,14 @@ public abstract class MenuItem {
 	protected int amount;
 	protected String itemName;
 	protected String itemType;
-	private final DecimalFormat format = new DecimalFormat("###,##0.00");
+	protected final DecimalFormat format = new DecimalFormat("###,##0.00");
 
 	/**
 	 Returns the total price of the item.
 	 @return The total price of the item, which is seen by doing individual price * amount in $##.## amount.
 	 */
 	public double itemPrice() {
-		return Double.parseDouble(format.format(price * amount));
+		return price * amount;
 	}
 	
 	/**
@@ -78,6 +78,6 @@ public abstract class MenuItem {
 	 */
 	public String toString() {
 		return "\n\tItem: " + this.itemName + "\n\tFlavor: " + this.itemType + "\n\tQuantity: " + this.amount
-				+"\n\tPrice: $" + this.itemPrice();
+				+"\n\tPrice: $" + format.format(this.itemPrice());
 	}
 }

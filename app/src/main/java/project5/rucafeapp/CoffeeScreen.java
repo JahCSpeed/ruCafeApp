@@ -11,18 +11,14 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CheckBox;
-import android.widget.RadioButton;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 import coffee.Coffee;
 import coffee.CoffeePrices;
-import donut.Donut;
-import donut.DonutPrices;
 
 public class CoffeeScreen extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
     private String drinkSize = "";
@@ -40,7 +36,7 @@ public class CoffeeScreen extends AppCompatActivity implements AdapterView.OnIte
         whippedCreamButton = findViewById(R.id.whippedCreamBtn);
         caramelButton = findViewById(R.id.caramelBtn);
         syrupButton = findViewById(R.id.syrupBtn);
-        this.coffeeAmount = findViewById(R.id.coffeAmt);
+        this.coffeeAmount = findViewById(R.id.coffeeAmt);
         createOrder.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
