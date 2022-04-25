@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">ruCafeApp</string>
-
+    <string name ="backTxt">Back</string>
+    <string name ="storeOrderHeader">Store Orders</string>
     <string-array name="drinkSizes">
         <item>Small</item>
         <item>Tall</item>

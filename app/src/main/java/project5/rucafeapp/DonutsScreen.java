@@ -36,7 +36,7 @@ public class DonutsScreen extends AppCompatActivity {
         flavorList = new ArrayList<>();
         addFlavors();
         setFlavorList();
-        ListAdapter listAdapter = new ListAdapter(getApplicationContext(),MainActivity.currentOrder.orderList, 1);
+        ListAdapter listAdapter = new ListAdapter(getApplicationContext(),MainActivity.currentOrder.getItemList(0), 0);
         donutOrders.setAdapter(listAdapter);
         donutOrders.setClickable(true);
     }

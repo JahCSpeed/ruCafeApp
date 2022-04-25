@@ -84,7 +84,7 @@ public class Order implements Customizable{
 	 @return The order in string format.
 	 */
 	public String toString() {
-		String returnString = ("Order Number: " + this.orderNumber + "  ");
+		String returnString = "";
 		for(MenuItem e: this.orderList) {
 			if(e instanceof Donut) {
 				returnString+= "\t-Donut( ";
@@ -98,6 +98,23 @@ public class Order implements Customizable{
 			}	
 		}
 		return returnString;
+	}
+	public ArrayList<MenuItem>getItemList(int id){
+		ArrayList<MenuItem> retnList = new ArrayList<>();
+		for(MenuItem e: orderList){
+			if(id == 0){
+				if(e instanceof Donut){
+					retnList.add(e);
+				}
+			}
+			if(id == 1){
+				if(e instanceof Coffee){
+					retnList.add(e);
+				}
+			}
+
+		}
+		return retnList;
 	}
 
 }

@@ -11,6 +11,9 @@
         <entry key="app/src/main/res/layout/activity_donuts.xml" value="0.1894287109375" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.2006340579710145" />
         <entry key="app/src/main/res/layout/activity_orders.xml" value="0.18115942028985507" />
+        <entry key="app/src/main/res/layout/activity_storeOrders.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_storeorder.xml" value="0.16666666666666666" />
+        <entry key="app/src/main/res/layout/activity_storeorders.xml" value="0.16666666666666666" />
         <entry key="app/src/main/res/layout/flavor_choice.xml" value="0.15520833333333334" />
         <entry key="app/src/main/res/layout/flavor_choice_specs.xml" value="0.1703445434570312" />
         <entry key="app/src/main/res/layout/flavors_page.xml" value="0.15520833333333334" />

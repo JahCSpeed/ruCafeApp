@@ -22,6 +22,7 @@ public class MainActivity extends AppCompatActivity {
         Button donutButton = findViewById(R.id.donutButton);
         Button coffeeButton = findViewById(R.id.coffeeButton);
         Button cartButton = findViewById(R.id.ordersButton);
+        Button storeOrderButton = findViewById(R.id.storeordersButton);
         donutButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -34,12 +35,27 @@ public class MainActivity extends AppCompatActivity {
                 openCoffeeScreen();
             }
         });
+        storeOrderButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openStoreScreen();
+            }
+        });
         cartButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 openCartScreen();
             }
         });
+    }
+
+    private void openStoreScreen() {
+        Intent intent = new Intent(this, StoreOrderScreen.class);
+        startActivity(intent);
+    }
+
+    public static void resetOrder(){
+        currentOrder = new Order(OrderNumbers.getOrderNumber());
     }
     public void openDonutScreen() {
         Intent intent = new Intent(this, DonutsScreen.class);

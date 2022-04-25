@@ -13,6 +13,9 @@
             android:name=".CoffeeScreen"
             android:exported="false" />
         <activity
+            android:name=".StoreOrderScreen"
+            android:exported="false" />
+        <activity
             android:name=".OrderScreen"
             android:exported="false" />
         <activity

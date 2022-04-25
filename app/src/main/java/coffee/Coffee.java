@@ -78,7 +78,7 @@ public class Coffee extends MenuItem implements Customizable {
 	 */
 	@Override
 	public String toString() {
-		String returnString = ("\n\tSize: " + this.itemName + "\n\tFlavor: " + this.itemType + "\n\tAddins: ");
+		String returnString = ("\n\tSize: " + this.itemName + "\n\tAddins: ");
 		if(addIns.size() == 0) {
 			returnString+= "NONE";
 		}else {
