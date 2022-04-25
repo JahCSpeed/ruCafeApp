@@ -24,11 +24,21 @@ import coffee.CoffeePrices;
 import donut.Donut;
 import donut.DonutPrices;
 
+/**
+ The CoffeeScreen class handles the user interface operations for coffee related activities.
+
+ @author Jah C. Speed, Abe Vitangcol
+ */
 public class CoffeeScreen extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
     private String drinkSize = "";
     private int amount = 0;
     private TextView coffeeAmount;
     private CheckBox creamButton,milkButton,whippedCreamButton,caramelButton,syrupButton;
+
+    /**
+     Creates the CoffeeScreen and necessary buttons when called.
+     @param savedInstanceState
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,12 +52,20 @@ public class CoffeeScreen extends AppCompatActivity implements AdapterView.OnIte
         syrupButton = findViewById(R.id.syrupBtn);
         this.coffeeAmount = findViewById(R.id.coffeAmt);
         createOrder.setOnClickListener(new View.OnClickListener() {
+            /**
+
+             @param v
+             */
             @Override
             public void onClick(View v) {
                 confirmOrder();
             }
         });
         backBtn.setOnClickListener(new View.OnClickListener() {
+            /**
+
+             @param v
+             */
             @Override
             public void onClick(View v) {
                 goBack();
@@ -107,6 +125,12 @@ public class CoffeeScreen extends AppCompatActivity implements AdapterView.OnIte
         AlertDialog alertDialog = builder.create();
         alertDialog.show();
     }
+
+    /**
+     Checks if the amount entered is a number greater than 0 to make an order.
+     Throws an alert box if the number is not greater than 0.
+     @return -1 if the number is not greater than 0 or not a number, 0 otherwise.
+     */
     private int checkAmount(){
         try{
             this.amount = Integer.parseInt(coffeeAmount.getText().toString());
@@ -121,11 +145,20 @@ public class CoffeeScreen extends AppCompatActivity implements AdapterView.OnIte
         }
 
     }
+
+    /**
+
+     @param adapterView
+     */
     @Override
     public void onNothingSelected(AdapterView<?> adapterView) {
         this.drinkSize = adapterView.getItemAtPosition(0).toString();
     }
 
+    /**
+     Returns the list of addons that were checked for this coffee order.
+     @return The list of addons for this coffee order.
+     */
     private ArrayList<String> getAddons(){
         ArrayList<String> addons = new ArrayList<>();
         if(creamButton.isChecked())
