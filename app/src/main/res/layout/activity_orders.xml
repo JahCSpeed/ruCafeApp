@@ -12,7 +12,7 @@
         android:layout_marginStart="13dp"
         android:layout_marginEnd="251dp"
         android:layout_marginBottom="4dp"
-        android:text="Back"
+        android:text="@string/backTxt"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -22,9 +22,9 @@
         android:id="@+id/submitOrderBtn"
         android:layout_width="147dp"
         android:layout_height="50dp"
-        android:layout_marginRight="12dp"
+        android:layout_marginEnd="12dp"
         android:layout_marginBottom="4dp"
-        android:text="Place Order"
+        android:text="@string/place_order"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
@@ -45,15 +45,15 @@
         android:layout_width="201dp"
         android:layout_height="57dp"
         android:layout_marginStart="106dp"
-        android:layout_marginTop="15dp"
         android:layout_marginEnd="104dp"
-        android:text="Order Number: "
+        android:text="@string/order_number"
         android:textAlignment="center"
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/donutFlavorRecycle" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/subtotalTxt"
@@ -61,7 +61,7 @@
         android:layout_height="34dp"
         android:layout_marginStart="17dp"
         android:layout_marginTop="22dp"
-        android:text="Subtotal: "
+        android:text="@string/subtotal"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/allOrderListView" />
@@ -72,7 +72,7 @@
         android:layout_height="37dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="68dp"
-        android:text="Sales Tax: "
+        android:text="@string/sales_tax"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/allOrderListView" />
@@ -83,7 +83,7 @@
         android:layout_height="45dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="116dp"
-        android:text="Total: "
+        android:text="@string/total"
         android:textSize="34sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"

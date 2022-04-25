@@ -1,7 +1,37 @@
 <resources>
-    <string name="app_name">ruCafeApp</string>
+    <string name="app_name">RU Cafe</string>
     <string name ="backTxt">Back</string>
     <string name ="storeOrderHeader">Store Orders</string>
+    <string name ="addToOrder">Add to Order</string>
+    <string name="hint">Must be a valid number greater than 0</string>
+    <string name="size">Drink Size</string>
+    <string name="addons">Additives</string>
+    <string name="coffee">Order Coffee</string>
+    <string name="possible_sizes">Possible Sizes</string>
+    <string name="cream">Cream</string>
+    <string name="whipped_cream">Whipped Cream</string>
+    <string name="caramel">Caramel</string>
+    <string name="syrup">Syrup</string>
+    <string name="milk">Milk</string>
+    <string name="donut_type">Donut Type</string>
+    <string name="order_donuts">Order Donuts</string>
+    <string name="donut_orders">Donut Orders</string>
+    <string name="place_order">Place Order</string>
+    <string name="order_number">Order Number:</string>
+    <string name="subtotal">Subtotal:</string>
+    <string name="sales_tax">Sales Tax:</string>
+    <string name="total">Total:</string>
+    <string name="quantity">Quantity</string>
+    <string name="yeast_donut">Yeast Donut</string>
+    <string name="cake_donut">Cake Donut</string>
+    <string name="donut_hole">Donut Hole</string>
+    <string name="add_to_order">Add to Order</string>
+    <string name="cart">Cart</string>
+    <string name="store_orders">Store Orders</string>
+    <string name="order_coffee">Order Coffee</string>
+    <string name="remove_order">Remove Order</string>
+    <string name="order_details">Order Details:</string>
+    <string name="item_name">Item Name</string>
     <string-array name="drinkSizes">
         <item>Small</item>
         <item>Tall</item>

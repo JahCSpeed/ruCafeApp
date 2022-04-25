@@ -1,7 +1,9 @@
 package project5.rucafeapp;
 
 import android.content.Context;
+import android.text.method.ScrollingMovementMethod;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
@@ -13,9 +15,6 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 import java.util.ArrayList;
-
-import coffee.Coffee;
-import donut.Donut;
 import mainMenu.MenuItem;
 import orders.Order;
 
@@ -24,8 +23,6 @@ public class ListAdapter extends BaseAdapter {
     ArrayList<MenuItem> orderList;
     ArrayList<Order> storeorderList;
     LayoutInflater inflater;
-    private final String optionRemove = "Remove";
-    private final String keyForFlavor = "Flavors";
     private int orderType;
     public ListAdapter(Context context, ArrayList<MenuItem> arrayList, int orderType) {
         this.context = context;
@@ -61,42 +58,36 @@ public class ListAdapter extends BaseAdapter {
     @NonNull
     @Override
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
+        convertView = inflater.inflate(R.layout.listview_item, null);
+        TextView menuItem = convertView.findViewById(R.id.menuItemType);
+        TextView menuDetails = convertView.findViewById(R.id.menuItemDetails);
         if(orderList != null) {
             MenuItem orderItem = orderList.get(position);
-            convertView = inflater.inflate(R.layout.listview_item, null);
-            TextView menuItem = convertView.findViewById(R.id.menuItemType);
-            TextView menuDetails = convertView.findViewById(R.id.menuItemDetails);
             Button removeBtn = convertView.findViewById(R.id.removeOrder);
-            removeBtn.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    removeItem(orderItem);
-
-                }
-            });
-
+            removeBtn.setOnClickListener(v -> removeItem(orderItem));
             menuItem.setText(orderItem.getType());
             menuDetails.setText("Order Details:" + orderItem.toString());
-
-            return convertView;
         }else{
             Order orderItem = storeorderList.get(position);
-            convertView = inflater.inflate(R.layout.listview_item, null);
-            TextView menuItem = convertView.findViewById(R.id.menuItemType);
-            TextView menuDetails = convertView.findViewById(R.id.menuItemDetails);
             Button removeBtn = convertView.findViewById(R.id.removeOrder);
-            removeBtn.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    removeItem(orderItem);
-
-                }
-            });
-
+            removeBtn.setOnClickListener(v -> removeItem(orderItem));
             menuItem.setText("Order Number: " + orderItem.orderNumber);
             menuDetails.setText("Order Details:\n" + orderItem.toString());
-            return convertView;
         }
+        menuDetails.setMaxLines(1000);
+        menuDetails.setMovementMethod(new ScrollingMovementMethod());
+        View.OnTouchListener listener = (v, event) -> {
+            boolean isLarger;
+            isLarger = ((TextView) v).getLineCount() * ((TextView) v).getLineHeight() > v.getHeight();
+            if (event.getAction() == MotionEvent.ACTION_MOVE && isLarger) {
+                v.getParent().requestDisallowInterceptTouchEvent(true);
+            } else {
+                v.getParent().requestDisallowInterceptTouchEvent(false);
+            }
+            return false;
+        };
+        menuDetails.setOnTouchListener(listener);
+        return convertView;
     }
     public void removeItem(MenuItem item) {
         if(MainActivity.currentOrder.remove(item)){

@@ -14,7 +14,7 @@
         android:layout_marginStart="106dp"
         android:layout_marginTop="130dp"
         android:layout_marginEnd="104dp"
-        android:text="RU- CAFE"
+        android:text="@string/app_name"
         android:textAlignment="center"
         android:textSize="24sp"
         android:textStyle="bold"
@@ -30,7 +30,7 @@
         android:layout_marginStart="44dp"
         android:layout_marginTop="50dp"
         android:layout_marginEnd="37dp"
-        android:text="Order Donuts"
+        android:text="@string/order_donuts"
         app:layout_constraintEnd_toStartOf="@+id/coffeeButton"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView6" />
@@ -41,7 +41,7 @@
         android:layout_height="106dp"
         android:layout_marginStart="18dp"
         android:layout_marginTop="74dp"
-        android:text="Cart"
+        android:text="@string/cart"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/donutButton" />
 
@@ -49,11 +49,11 @@
         android:id="@+id/storeordersButton"
         android:layout_width="143dp"
         android:layout_height="106dp"
-        android:layout_marginStart="240dp"
+        android:layout_marginStart="79dp"
         android:layout_marginTop="72dp"
-        android:text="Store Orders"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/donutButton" />
+        android:text="@string/store_orders"
+        app:layout_constraintStart_toEndOf="@+id/ordersButton"
+        app:layout_constraintTop_toBottomOf="@+id/coffeeButton" />
 
     <Button
         android:id="@+id/coffeeButton"
@@ -62,7 +62,7 @@
         android:layout_marginStart="37dp"
         android:layout_marginTop="50dp"
         android:layout_marginEnd="44dp"
-        android:text="Order Coffee"
+        android:text="@string/order_coffee"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/donutButton"
         app:layout_constraintTop_toBottomOf="@+id/textView6" />
