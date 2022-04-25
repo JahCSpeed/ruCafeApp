@@ -9,6 +9,10 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 
+/**
+
+ @author Jah C. Speed, Abe Vitangcol
+ */
 public class RecyclerAdaptor extends RecyclerView.Adapter<RecyclerAdaptor.ViewHolder>{
     private ArrayList<Flavor> flavorList;
     private RecyclerViewClickListener listener;

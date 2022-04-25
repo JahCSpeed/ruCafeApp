@@ -20,6 +20,11 @@ public class DonutsScreen extends AppCompatActivity {
     private ListView donutOrders;
     private Button backBtn;
     private final String keyForFlavor = "Flavors";
+
+    /**
+
+     @param savedInstanceState
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -41,11 +46,19 @@ public class DonutsScreen extends AppCompatActivity {
         donutOrders.setClickable(true);
     }
 
+    /**
+     Goes back one screen.
+     This can either go back to the flavor selection screen or the main menu depending
+     on where it was clicked.
+     */
     private void goBack() {
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
     }
 
+    /**
+     Sets up the scrollable flavor list by populating it with flavors and making it a recycler view.
+     */
     private void setFlavorList(){
         setOnClickListener();
         RecyclerAdaptor adaptor = new RecyclerAdaptor(flavorList,listener);
@@ -56,6 +69,9 @@ public class DonutsScreen extends AppCompatActivity {
 
     }
 
+    /**
+
+     */
     private void setOnClickListener() {
         listener = new RecyclerAdaptor.RecyclerViewClickListener() {
             @Override
@@ -68,6 +84,9 @@ public class DonutsScreen extends AppCompatActivity {
 
     }
 
+    /**
+     Add a list of flavors into the flavor list.
+     */
     private void addFlavors(){
         flavorList.add(new Flavor("Chocolate Frosted Doughnut"));
         flavorList.add(new Flavor("Cinnamon Twist Doughnut"));

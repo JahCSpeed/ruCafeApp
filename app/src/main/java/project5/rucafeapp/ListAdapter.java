@@ -18,6 +18,9 @@ import java.util.ArrayList;
 import mainMenu.MenuItem;
 import orders.Order;
 
+/**
+ The ListAdapter class
+ */
 public class ListAdapter extends BaseAdapter {
     Context context;
     ArrayList<MenuItem> orderList;
