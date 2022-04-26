@@ -29,7 +29,7 @@ public class DonutsScreen extends AppCompatActivity {
 
     /**
      Creates the DonutsScreen and necessary buttons when called.
-     @param savedInstanceState data that was previously contained in other screens.
+     @param savedInstanceState Data that was previously contained in other screens.
      */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,8 +40,8 @@ public class DonutsScreen extends AppCompatActivity {
         backBtn = findViewById(R.id.donutBackBtn);
         backBtn.setOnClickListener(new View.OnClickListener() {
             /**
-             Goes back to the main
-             @param v
+             Goes back to the main menu upon clicking this button.
+             @param v The go back button that was clicked.
              */
             @Override
             public void onClick(View v) {

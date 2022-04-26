@@ -34,7 +34,7 @@ public class CoffeeScreen extends AppCompatActivity implements AdapterView.OnIte
 
     /**
      Creates the CoffeeScreen and necessary buttons when called.
-     @param savedInstanceState data that was previously contained in other screens.
+     @param savedInstanceState Data that was previously contained in other screens.
      */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -138,6 +138,11 @@ public class CoffeeScreen extends AppCompatActivity implements AdapterView.OnIte
         builder.setTitle(title);
         builder.setCancelable(false);
         builder.setPositiveButton(positiveMessageBtn, new DialogInterface.OnClickListener() {
+            /**
+             Closes the alertbox upon clicking the close button.
+             @param dialog The alert box that appeared.
+             @param which The position of this alert box.
+             */
             @Override
             public void onClick(DialogInterface dialog, int which){
                 dialog.cancel();

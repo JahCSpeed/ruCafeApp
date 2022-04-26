@@ -19,7 +19,10 @@ import mainMenu.MenuItem;
 import orders.Order;
 
 /**
- The ListAdapter class
+ The ListAdapter class is used in the storeorderscreen to hold the details of all the orders.
+ Capable of showing how long it is and can remove specific items or orders from the list.
+ It is a scrollable list.
+ @author Jah C. Speed, Abe Vitangcol
  */
 public class ListAdapter extends BaseAdapter {
     Context context;
@@ -40,6 +43,10 @@ public class ListAdapter extends BaseAdapter {
     }
 
 
+    /**
+     Returns how long the storeorderlist is.
+     @return The size of the storeorderlist.
+     */
     @Override
     public int getCount() {
         if(storeorderList != null){
@@ -48,16 +55,34 @@ public class ListAdapter extends BaseAdapter {
         return orderList.size();
     }
 
+    /**
+     Gets the item and returns it as null.
+     @param i The item to be obtained.
+     @return null.
+     */
     @Override
     public Object getItem(int i) {
         return null;
     }
 
+    /**
+     Gets the item id and returns it as 0.
+     @param i The item to check the id of.
+     @return 0.
+     */
     @Override
     public long getItemId(int i) {
         return 0;
     }
 
+    /**
+     Gives the order information on the screen given its position and contents.
+     Able to scroll through the ListAdapter to see all the items there.
+     @param position The position where the item is.
+            convertView The view to be converted.
+            parent The type or group the convertView is from.
+     @return The contents of the convertview, false otherwise.
+     */
     @NonNull
     @Override
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
@@ -92,6 +117,12 @@ public class ListAdapter extends BaseAdapter {
         menuDetails.setOnTouchListener(listener);
         return convertView;
     }
+
+    /**
+     Removes an item from a specific order.
+     Throws an error if the removable item does not exist for any reason.
+     @param item The item to be removed from an order.
+     */
     public void removeItem(MenuItem item) {
         if(MainActivity.currentOrder.remove(item)){
             Toast.makeText(context.getApplicationContext(), "Item Removed From Cart", Toast.LENGTH_SHORT).show();
@@ -102,6 +133,12 @@ public class ListAdapter extends BaseAdapter {
             Toast.makeText(context.getApplicationContext(), "ERROR Removing Item", Toast.LENGTH_SHORT).show();
         }
     }
+
+    /**
+     Removes a specific order, removing all items from its name.
+     Throws an error if the removable item does not exist for any reason.
+     @param item The order to be removed from the store order.
+     */
     public void removeItem(Order item) {
         if(MainActivity.storeOrders.remove(item)){
             Toast.makeText(context.getApplicationContext(), "Order Removed From Store Orders", Toast.LENGTH_SHORT).show();
