@@ -22,7 +22,8 @@ import coffee.CoffeePrices;
 
 /**
  The CoffeeScreen class handles the user interface operations for coffee related activities.
-
+ Capable of ordering coffee to send to the other screens. Coffee items can be customized
+ and is able to throw errors upon faulty order confirmations.
  @author Jah C. Speed, Abe Vitangcol
  */
 public class CoffeeScreen extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
@@ -33,7 +34,7 @@ public class CoffeeScreen extends AppCompatActivity implements AdapterView.OnIte
 
     /**
      Creates the CoffeeScreen and necessary buttons when called.
-     @param savedInstanceState
+     @param savedInstanceState data that was previously contained in other screens.
      */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,8 +50,8 @@ public class CoffeeScreen extends AppCompatActivity implements AdapterView.OnIte
         this.coffeeAmount = findViewById(R.id.coffeeAmt);
         createOrder.setOnClickListener(new View.OnClickListener() {
             /**
-
-             @param v
+             Performs the confirm order button upon clicking this item.
+             @param v The button to click to confirm the order.
              */
             @Override
             public void onClick(View v) {
@@ -59,8 +60,8 @@ public class CoffeeScreen extends AppCompatActivity implements AdapterView.OnIte
         });
         backBtn.setOnClickListener(new View.OnClickListener() {
             /**
-
-             @param v
+             Goes back one screen to the main menu.
+             @param v The button to click to go back a screen.
              */
             @Override
             public void onClick(View v) {
@@ -75,14 +76,31 @@ public class CoffeeScreen extends AppCompatActivity implements AdapterView.OnIte
         sizeSpinner.setOnItemSelectedListener(this);
     }
 
+    /**
+     Gets the item selected for the drink size and updates the size of this coffee.
+     @param adapterView The view to change the size of coffee.
+     @param view The view within the adapterview that was clicked.
+     @param i The integer position the item is.
+     @param l The row the item is in.
+     */
     @Override
     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
         this.drinkSize = adapterView.getItemAtPosition(i).toString();
     }
+
+    /**
+     Goes back one screen, back to the main menu screen.
+     */
     private void goBack() {
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
     }
+
+    /**
+     Confirms the coffee order and customizations made on it.
+     Shows a message at the bottom if the order was successful.
+     Throws an error if there was a problem with the order, such as invalid amount given.
+     */
     public void confirmOrder() {
         if(checkAmount() == -1){
             return;
@@ -107,6 +125,13 @@ public class CoffeeScreen extends AppCompatActivity implements AdapterView.OnIte
         Toast.makeText(getApplicationContext(), "Order Added Successfully", Toast.LENGTH_SHORT).show();
         startActivity(getIntent());
     }
+
+    /**
+     Crates an alert box, acting as an error message for the coffee screen.
+     @param message The message to be put into the box, generally an error message.
+            title The title of the box.
+            positiveMessageBtn The button message to close the box.
+     */
     private void createAlertBox(String message,String title,String positiveMessageBtn){
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setMessage(message);
@@ -143,8 +168,8 @@ public class CoffeeScreen extends AppCompatActivity implements AdapterView.OnIte
     }
 
     /**
-
-     @param adapterView
+     Changes the drink size to small as default.
+     @param adapterView The view to change the size of the coffee cups.
      */
     @Override
     public void onNothingSelected(AdapterView<?> adapterView) {

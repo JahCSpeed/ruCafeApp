@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
 
     /**
      Creates the main menu screen with the necessary buttons to go to the other screens.
-     @param savedInstanceState
+     @param savedInstanceState data that was previously contained in other screens.
      */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -84,7 +84,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     /**
-     Resets current orders t
+     Resets current orders stored on the cart when the order has been finalized.
      */
     public static void resetOrder(){
         currentOrder = new Order(OrderNumbers.getOrderNumber());

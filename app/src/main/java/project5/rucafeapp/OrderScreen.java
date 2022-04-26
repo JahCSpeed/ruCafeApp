@@ -25,6 +25,10 @@ public class OrderScreen extends AppCompatActivity {
     private Button backBtn,orderBtn;
     private static final double SALES_TAX = ((6.625)/100);
 
+    /**
+     Creates the OrderScreen and necessary buttons when called.
+     @param savedInstanceState data that was previously contained in other screens.
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
