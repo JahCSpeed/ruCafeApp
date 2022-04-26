@@ -12,7 +12,7 @@
         android:layout_width="201dp"
         android:layout_height="57dp"
         android:layout_marginStart="106dp"
-        android:layout_marginTop="130dp"
+        android:layout_marginTop="200dp"
         android:layout_marginEnd="104dp"
         android:text="@string/app_name"
         android:textAlignment="center"
@@ -66,5 +66,27 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/donutButton"
         app:layout_constraintTop_toBottomOf="@+id/textView6" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="121dp"
+        android:layout_height="106dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="52dp"
+        android:contentDescription="@string/coffeeimage"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/coffee" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="121dp"
+        android:layout_height="106dp"
+        android:layout_marginTop="52dp"
+        android:layout_marginEnd="16dp"
+        android:contentDescription="@string/donutimage"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/donuts" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

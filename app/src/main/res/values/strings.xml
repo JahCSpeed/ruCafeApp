@@ -32,6 +32,8 @@
     <string name="remove_order">Remove Order</string>
     <string name="order_details">Order Details:</string>
     <string name="item_name">Item Name</string>
+    <string name="donutimage">donutImage</string>
+    <string name="coffeeimage">coffeeImage</string>
     <string-array name="drinkSizes">
         <item>Small</item>
         <item>Tall</item>
